@@ -2,7 +2,8 @@ package scenarios;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import screens.BaseScreen;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
@@ -10,18 +11,18 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Yuliia Kulyk on 29.01.2017.
  */
-public class AppiumTest extends AndroidSetup {
+public class AppiumTest extends BaseTest {
 
     @Test
     public void test() {
-        try {
-            prepareAndroidForAppium();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        String app_package_name = "com.aws3.ebenradio:id/";
-        By playButton = By.id(app_package_name + "play");
+        By playButton = By.id("play");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(playButton).click();
+    }
+
+    @Test
+    public void navigateToMusicMenu() {
+        BaseScreen screen = new BaseScreen(driver);
+        screen.navigateToMenu(BaseScreen.MenuOptions.PROFILE);
     }
 }
