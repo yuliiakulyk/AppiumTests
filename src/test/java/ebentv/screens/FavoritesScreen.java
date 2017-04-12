@@ -19,5 +19,4 @@ public class FavoritesScreen extends BaseScreen {
         super(driver);
     }
 
-
 }
