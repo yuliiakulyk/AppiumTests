@@ -14,6 +14,8 @@ public class FavoritesScreen extends BaseScreen {
     public By videoTitle = By.id("com.aws3.ebentv:id/tv_title");
     public By videoActionAddToFavorites = By.id("com.aws3.ebentv:id/add_to_favorite");
     public By videoActionShare = By.id("com.aws3.ebentv:id/share");
+    public By noFavoritesYetText = By.xpath("android.widget.TextView[contains(@text,'No favorites yet.')]");
+    public By noFavoritesPicture = By.id("com.aws3.ebentv:id/ivNoFavorites");
 
     public FavoritesScreen(AndroidDriver driver) {
         super(driver);

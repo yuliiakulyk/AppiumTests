@@ -10,16 +10,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class NavigationTests extends BaseTest{
+public class NavigationTests extends BaseTest {
     HomeScreen homeScreen;
     String homeScreenTitle = "Home";
     String favoritesScreenTitle = "Favorites";
-    String categoriesScreenTitle = "Favorites";
+    String categoriesScreenTitle = "Categories";
 
     @Before
-    public void SetUp(){
+    public void SetUp() {
         homeScreen = new HomeScreen(driver);
     }
+
     @Test
     public void test() {
         driver.findElement(homeScreen.favoritesTab).click();
@@ -60,14 +61,6 @@ public class NavigationTests extends BaseTest{
         Assert.assertTrue(list.size() < 1);
         Assert.assertTrue(driver.findElement(homeScreen.streamTitle).isDisplayed());
         Assert.assertTrue(driver.findElement(homeScreen.streamIcon).isDisplayed());
-    }
-
-    @Test
-    public void searchTest() {
-        SearchScreen searchScreen = homeScreen.navigateToScreen(BaseScreen.Screens.SEARCH, new SearchScreen(driver));
-        searchScreen.searchFor("50 cent");
-        sleep();
-        searchScreen.assertSearchResultsContain("50 cent");
     }
 
 }
