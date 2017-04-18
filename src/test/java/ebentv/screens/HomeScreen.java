@@ -1,5 +1,6 @@
 package ebentv.screens;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
@@ -15,9 +16,16 @@ public class HomeScreen extends BaseScreen {
     public By popularVideoAddToFavorites = By.id("com.aws3.ebentv:id/add_to_favorite");
     public By popularVideoShare = By.id("com.aws3.ebentv:id/share");
     public By videoThumbnail = By.xpath("//android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.ImageView");
+    public By popularVideo = By.id("com.aws3.ebentv:id/iv_video_big");
+    public By streamIcon = By.xpath("//android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.LinearLayout");
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
+    }
+
+    public void clickByCoordinates(int x, int y) {
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(x, y).perform();
     }
 
 }

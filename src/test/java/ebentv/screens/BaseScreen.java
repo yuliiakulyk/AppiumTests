@@ -19,6 +19,7 @@ public class BaseScreen {
     public By menuLogOut = By.id("com.aws3.ebentv:id/logout");
     public By ads = By.xpath("//android.view.View[contains(@resource-id,'activity_main')]/android.widget.LinearLayout[2]");
 
+
     public BaseScreen(AndroidDriver driver) {
         this.driver = driver;
     }
@@ -51,4 +52,5 @@ public class BaseScreen {
         SEARCH,
         PLAYER
     }
+
 }
