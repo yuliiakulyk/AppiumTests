@@ -11,6 +11,12 @@ public class RegistrationBaseScreen extends BaseScreen {
     public By signUpTab = By.xpath("//android.widget.LinearLayout/android.widget.TextView[contains(@text,'SIGN UP')]");
     public By closeForm = By.id("com.aws3.ebentv:id/close");
 
+    /*-----------------ERROR MESSAGES----------------------*/
+    public String fieldRequired = "This field is required";
+    public String invalidPassword = "Invalid password";
+    public String invalidEmail = "Invalid Email";
+    public String passwordLength = "Min 6 and Max 30 characters";
+
     public RegistrationBaseScreen(AndroidDriver driver) {
         super(driver);
     }
