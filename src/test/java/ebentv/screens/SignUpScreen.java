@@ -2,6 +2,7 @@ package ebentv.screens;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 /**
  * Created by Yuliia Kulyk on 18.04.2017.
@@ -23,6 +24,19 @@ public class SignUpScreen extends RegistrationBaseScreen {
 
     public SignUpScreen(AndroidDriver driver) {
         super(driver);
+    }
+
+    public void fillRequiredFields(String name, String email, String password) {
+        fillField(this.nameField, name);
+        fillField(this.emailField, email);
+        fillField(this.passwordField, password);
+    }
+
+    public void fillField (By locator, String text) {
+        WebElement field = driver.findElement(locator);
+        field.clear();
+        field.click();
+        field.sendKeys(text);
     }
 
 }

@@ -1,0 +1,23 @@
+name,email,password,pass
+test,test@test.com,qwerty,TRUE
+,,,FALSE
+,test1@test.com,qwerty,FALSE
+q,test2@test.com,qwerty,FALSE
+qq,test3@test.com,qwerty,TRUE
+test,test4gmail.com,qwerty,FALSE
+test,#@%^%#$@#$@#.com,qwerty,FALSE
+test,@gmail.com,qwerty,FALSE
+test,Joe Smith <email@domain.com>,qwerty,FALSE
+test,test8.gmail.com,qwerty,FALSE
+test,test9@gmail@gmail.com,qwerty,FALSE
+test,.test10@gmail.com,qwerty,FALSE
+test,test11@gmail.com,qwerty,FALSE
+test,test12.@gmail.com,qwerty,FALSE
+test,פבגדה@gmail.com,qwerty,FALSE
+test,email@domain.com (Joe Smith),qwerty,FALSE
+test,test15@gmail,qwerty,FALSE
+test,test16@-gmail.com,qwerty,FALSE
+test,test17@gmail..com,qwerty,FALSE
+test, test18@gmail.com,qwerty,TRUE
+test,test19@gmail.com ,qwerty,TRUE
+

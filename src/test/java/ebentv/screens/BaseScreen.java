@@ -16,6 +16,7 @@ public class BaseScreen {
     public By contextMenu = By.id("com.aws3.ebentv:id/menu");
     public By screenTitle = By.id("com.aws3.ebentv:id/title");
     public By menuInfo = By.id("com.aws3.ebentv:id/info");
+    public By menuLogIn = By.id("com.aws3.ebentv:id/logout");
     public By menuLogOut = By.id("com.aws3.ebentv:id/logout");
     public By ads = By.xpath("//android.view.View[contains(@resource-id,'activity_main')]/android.widget.LinearLayout[2]");
 
@@ -40,6 +41,12 @@ public class BaseScreen {
                 return instanceOfScreen;
             case PLAYER:
                 return instanceOfScreen;
+            case SIGNUP:
+                driver.findElement(this.contextMenu).click();
+                driver.findElement(this.menuLogIn).click();
+                LogInScreen logInScreen = new LogInScreen(driver);
+                driver.findElement(logInScreen.signUpTab).click();
+                return instanceOfScreen;
             default:
                 return instanceOfScreen;
         }
@@ -50,7 +57,8 @@ public class BaseScreen {
         CATEGORIES,
         FAVORITES,
         SEARCH,
-        PLAYER
+        PLAYER,
+        SIGNUP
     }
 
 }

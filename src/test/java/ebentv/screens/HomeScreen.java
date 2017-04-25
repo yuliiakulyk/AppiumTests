@@ -18,7 +18,6 @@ public class HomeScreen extends BaseScreen {
     public By videoThumbnail = By.xpath("//android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.ImageView");
     public By popularVideo = By.id("com.aws3.ebentv:id/iv_video_big");
     public By streamIcon = By.xpath("//android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.LinearLayout");
-
     public HomeScreen(AndroidDriver driver) {
         super(driver);
     }
